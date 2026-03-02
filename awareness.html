@@ -1,145 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCIU Sri Lanka</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Public Awareness - CCID Sri Lanka</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for the interactive checklist */
+        .check-item input:checked + label {
+            text-decoration: line-through;
+            color: #3b82f6;
+            opacity: 0.6;
+        }
+        /* Ensuring the nav is always visible even without style.css */
+        nav {
+            background: rgba(10, 15, 29, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1f2937;
+        }
+        /* Navigation Links වලට animated underline එක දාන හැටි */
+        .nav-link {
+        position: relative;
+        color: #d1d5db; /* gray-300 */
+        transition: all 0.3s ease;
+        font-size: 0.875rem; /* text-sm */
+        font-weight: 700; /* font-bold */
+        letter-spacing: 0.05em;
+        }
 
+        .nav-link:hover {
+        color: #3b82f6; /* blue-500 */
+        }
+
+        .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -6px;
+        left: 0;
+        background-color: #3b82f6;
+        transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after, .active-link::after {
+        width: 100%;
+        }
+
+        .active-link {
+        color: #3b82f6 !important;
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <nav class="nav-container">
-    <a href="index.html" class="logo-area">
-        <i class="fas fa-shield-alt text-3xl text-blue-500"></i>
-        <h1 class="text-2xl font-black text-white">CCIU</h1>
-    </a>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="laws.html">Laws</a></li>
-        <li><a href="awareness.html">Awareness</a></li>
-        <li><a href="scams.html">Scams</a></li>
-        <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
-    </ul>
+<body class="bg-gray-900 text-white font-sans selection:bg-blue-500 selection:text-white">
+
+    <nav class="py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <i class="fas fa-shield-alt text-3xl text-blue-500"></i>
+                <h1 class="text-2xl font-black tracking-tighter">CCID</h1>
+            </a>
+            <ul class="hidden md:flex gap-8 font-bold text-sm uppercase tracking-widest">
+                <li><a href="index.html" class="hover:text-blue-500 transition">Home</a></li>
+                <li><a href="laws.html" class="hover:text-blue-500 transition">Laws</a></li>
+                <li><a href="awareness.html" class="text-blue-500">Awareness</a></li>
+                <li><a href="scams.html" class="hover:text-blue-500 transition">Scams</a></li>
+                <li><a href="contact.html" class="bg-blue-600 px-5 py-2 rounded-full hover:bg-blue-700 transition">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-    <header class="hero-section aware-bg">
-    <div class="text-center">
-        <h1 class="text-6xl font-black mb-4">Public <span class="text-blue-500">Awareness</span></h1>
-        <p class="text-xl text-gray-300">Everything you need to know to stay safe online.</p>
-    </div>
-    </header>
-    <section class="py-20 bg-[#0a0f1d] text-white">
-    <div class="max-w-6xl mx-auto px-5">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-extrabold mb-4">Digital <span class="text-blue-500">Defense Guide</span></h2>
-            <p class="text-gray-400">Simple steps to protect your digital life from cyber threats.</p>
-        </div>
 
-        <div class="space-y-12">
-            <div class="flex flex-col md:flex-row items-center gap-10 bg-gray-900/50 p-8 rounded-3xl border border-gray-800">
-                <div class="w-20 h-20 bg-blue-600/20 rounded-full flex items-center justify-center shrink-0">
-                    <i class="fas fa-key text-3xl text-blue-500"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">1. Use Strong Passwords</h3>
-                    <p class="text-gray-400">Don't use your name or birthday. Mix uppercase, lowercase, numbers, and symbols like <span class="text-blue-400">@#$!</span></p>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center gap-10 bg-gray-900/50 p-8 rounded-3xl border border-gray-800">
-                <div class="w-20 h-20 bg-green-600/20 rounded-full flex items-center justify-center shrink-0">
-                    <i class="fas fa-shield-alt text-3xl text-green-500"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">2. Enable Two-Factor (2FA)</h3>
-                    <p class="text-gray-400">Turn on 2FA for WhatsApp, Facebook, and Gmail. Even if someone knows your password, they can't log in without the code.</p>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row items-center gap-10 bg-gray-900/50 p-8 rounded-3xl border border-gray-800">
-                <div class="w-20 h-20 bg-purple-600/20 rounded-full flex items-center justify-center shrink-0">
-                    <i class="fas fa-sync text-3xl text-purple-500"></i>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2">3. Keep Apps Updated</h3>
-                    <p class="text-gray-400">Updates fix security holes. Always update your phone’s software and apps as soon as you see a notification.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="max-w-4xl mx-auto mt-20 p-8 bg-gray-800/30 rounded-2xl border border-gray-700">
-    <h3 class="text-2xl font-bold mb-8 text-center text-blue-400">Cyber Safety Cheat Sheet</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-            <h4 class="text-green-500 font-bold flex items-center gap-2"><i class="fas fa-check-circle"></i> DO THIS</h4>
-            <ul class="text-gray-400 space-y-2 text-sm">
-                <li>Check the sender's email address carefully.</li>
-                <li>Report suspicious activities to CCIU.</li>
-                <li>Lock your phone with a PIN or Fingerprint.</li>
-            </ul>
-        </div>
-        <div class="space-y-4">
-            <h4 class="text-red-500 font-bold flex items-center gap-2"><i class="fas fa-times-circle"></i> DON'T DO THIS</h4>
-            <ul class="text-gray-400 space-y-2 text-sm">
-                <li>Click on links in random SMS messages.</li>
-                <li>Use public Wi-Fi for bank transactions.</li>
-                <li>Share your OTP with anyone.</li>
-            </ul>
-        </div>
-    </div>
-</div>
-    <footer class="bg-[#050a15] border-t border-gray-800 pt-16 pb-8">
-    <div class="max-w-6xl mx-auto px-5">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            
-            <div class="col-span-1 md:col-span-1">
-                <div class="flex items-center gap-2 mb-4">
-                    <i class="fas fa-shield-alt text-2xl text-blue-500"></i>
-                    <span class="text-2xl font-black text-white">CCIU</span>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Sri Lanka's official portal for cybercrime awareness and digital safety. Protecting our citizens in the digital frontier.
-                </p>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6">Quick Links</h4>
-                <ul class="space-y-3 text-gray-400 text-sm">
-                    <li><a href="index.html" class="hover:text-blue-500 transition">Home</a></li>
-                    <li><a href="laws.html" class="hover:text-blue-500 transition">Cyber Laws</a></li>
-                    <li><a href="awareness.html" class="hover:text-blue-500 transition">Safety Tips</a></li>
-                    <li><a href="scams.html" class="hover:text-blue-500 transition">Report Scams</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6">Contact Us</h4>
-                <ul class="space-y-3 text-gray-400 text-sm">
-                    <li class="flex items-center gap-3"><i class="fas fa-phone text-blue-500"></i> +94 11 2XXX XXX</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-envelope text-blue-500"></i> report@cciu.gov.lk</li>
-                    <li class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-blue-500"></i> Colombo, Sri Lanka</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-white font-bold mb-6">Follow Us</h4>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition"><i class="fab fa-facebook-f text-white"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-400 transition"><i class="fab fa-twitter text-white"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-600 transition"><i class="fab fa-youtube text-white"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="border-t border-gray-900 pt-8 text-center">
-            <p class="text-gray-500 text-xs">
-                &copy; 2026 CCIU Sri Lanka. All Rights Reserved. Designed for Public Safety.
+    <header class="relative py-32 overflow-hidden bg-gradient-to-b from-blue-900/30 to-gray-900 border-b border-gray-800">
+        <div class="max-w-4xl mx-auto px-5 text-center relative z-10" data-aos="zoom-in">
+            <span class="bg-blue-500/10 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block border border-blue-500/20">
+                🛡️ Stay Protected Online
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Public <span class="text-blue-500">Awareness</span></h1>
+            <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
+                Empowering Sri Lankan citizens with the knowledge to fight cybercrime. Your safety is our priority.
             </p>
         </div>
-    </div>
+    </header>
+
+    <section class="py-24 bg-[#0a0f1d]">
+        <div class="max-w-4xl mx-auto px-5">
+            <div class="bg-gray-800/40 border border-gray-700 p-8 md:p-12 rounded-[2rem] shadow-2xl" data-aos="fade-up">
+                <h2 class="text-3xl font-bold mb-4">Digital Safety <span class="text-blue-500 text-xl block md:inline md:ml-2 italic underline">Checklist</span></h2>
+                <p class="text-gray-400 mb-10">Don't just read—take action. Tick off the steps you've already secured.</p>
+                
+                <div class="space-y-4">
+                    <div class="check-item flex items-center gap-4 bg-gray-900/60 p-5 rounded-2xl border border-gray-700 hover:border-blue-500/40 transition group">
+                        <input type="checkbox" id="c1" class="w-6 h-6 rounded accent-blue-500">
+                        <label for="c1" class="text-lg font-medium cursor-pointer flex-1 group-hover:text-blue-400 transition">Enable 2FA on WhatsApp & Social Media</label>
+                    </div>
+                    <div class="check-item flex items-center gap-4 bg-gray-900/60 p-5 rounded-2xl border border-gray-700 hover:border-blue-500/40 transition group">
+                        <input type="checkbox" id="c2" class="w-6 h-6 rounded accent-blue-500">
+                        <label for="c2" class="text-lg font-medium cursor-pointer flex-1 group-hover:text-blue-400 transition">Update phone OS to the latest version</label>
+                    </div>
+                    <div class="check-item flex items-center gap-4 bg-gray-900/60 p-5 rounded-2xl border border-gray-700 hover:border-blue-500/40 transition group">
+                        <input type="checkbox" id="c3" class="w-6 h-6 rounded accent-blue-500">
+                        <label for="c3" class="text-lg font-medium cursor-pointer flex-1 group-hover:text-blue-400 transition">Use a unique password for my Email account</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-black mb-4 uppercase">Digital Defense <span class="text-blue-500">Guide</span></h2>
+                <div class="h-1 w-20 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/30 p-10 rounded-3xl border border-gray-800 hover:bg-gray-800 transition duration-500" data-aos="fade-up">
+                    <i class="fas fa-user-secret text-4xl text-blue-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Privacy Settings</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Check your social media privacy settings. Limit who can see your phone number and personal photos.</p>
+                </div>
+                <div class="bg-gray-800/30 p-10 rounded-3xl border border-gray-800 hover:bg-gray-800 transition duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-link-slash text-4xl text-red-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Suspicious Links</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">If a message offers free gifts or money via a link, it's a scam. Never click links from unknown SMS or WhatsApp senders.</p>
+                </div>
+                <div class="bg-gray-800/30 p-10 rounded-3xl border border-gray-800 hover:bg-gray-800 transition duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-wifi text-4xl text-yellow-500 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4">Public Wi-Fi Risks</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Avoid logging into bank accounts or apps using free public Wi-Fi. Use your mobile data for sensitive transactions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050a15] border-t border-gray-800 pt-20 pb-10">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                
+                <div class="col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-shield-alt text-3xl text-blue-500"></i>
+                        <span class="text-3xl font-black text-white tracking-tighter">CCID</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        The official Cyber Crime Investigation Division portal for digital safety and public awareness in Sri Lanka. 
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm font-medium">
+                        <li><a href="index.html" class="hover:text-blue-500 transition">Home</a></li>
+                        <li><a href="laws.html" class="hover:text-blue-500 transition">Cyber Laws</a></li>
+                        <li><a href="awareness.html" class="hover:text-blue-500 transition">Safety Tips</a></li>
+                        <li><a href="scams.html" class="hover:text-blue-500 transition">Recent Scams</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Contact Support</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-center gap-4"><i class="fas fa-phone-alt text-blue-500"></i> +94 11 2XXX XXX</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-envelope text-blue-500"></i> report@ccid.xxx.lk</li>
+                        <li class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-blue-500"></i> CcID HQ, Colombo 01</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-8 uppercase tracking-widest text-xs">Follow Safety</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-11 h-11 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-blue-600 transition duration-300 border border-gray-700 hover:border-transparent"><i class="fab fa-facebook-f text-white"></i></a>
+                        <a href="#" class="w-11 h-11 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-blue-400 transition duration-300 border border-gray-700 hover:border-transparent"><i class="fab fa-twitter text-white"></i></a>
+                        <a href="#" class="w-11 h-11 rounded-full bg-gray-800/50 flex items-center justify-center hover:bg-red-600 transition duration-300 border border-gray-700 hover:border-transparent"><i class="fab fa-youtube text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800/50 pt-10 text-center">
+                <p class="text-gray-500 text-xs font-medium tracking-widest uppercase">
+                    &copy; 2026 CCID Sri Lanka. All Rights Reserved. Protecting the Digital Nation.
+                </p>
+            </div>
+        </div>
     </footer>
+
+    <a href="https://wa.me/94702417080" class="fixed bottom-10 right-10 z-50 bg-[#25d366] p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group" target="_blank">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ 
+            duration: 1000, 
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
